@@ -3,111 +3,98 @@
 
 // Task-1
 
-Console.Write("word: ");
-string word=Console.ReadLine();
-int lenz=word.Length;
-Console.Write("num: ");
-int num=Convert.ToInt32(Console.ReadLine());
+Console.Write("Count of Minutes: ");
+int countMinutes=Convert.ToInt32(Console.ReadLine());
 
-if (num>lenz)
+int hour=countMinutes/60;
+int minute=countMinutes%60;
+
+if (minute!=0)
 {
-    string upper=word.ToUpper();
-    Console.WriteLine(upper);
+    Console.WriteLine($"Result: {hour}:{minute}");
 }
 else
 {
-    string lower=word.ToLower();
-    Console.WriteLine(lower);
+    Console.WriteLine($"Result: {hour}:{minute}0");
 }
-
 
 
 
 // Task-2
 
-Console.Write("Enter num1: ");
-int x=Convert.ToInt32(Console.ReadLine());
-Console.Write("Enter num2: ");
-int y=Convert.ToInt32(Console.ReadLine());
+Console.Write("Yoshni kiriting: ");
+int age=Convert.ToInt32(Console.ReadLine());
 
-if (x>y)
+if (0<age && age<=12)
 {
-    Console.WriteLine("x is greater than y");
+    Console.WriteLine("bola");
 }
-else if (x<y)
+else if(13<=age && age<=19)
 {
-    Console.WriteLine("x is less than y");
+    Console.WriteLine("o'smir");
 }
-else if (x==y)
+else if(20<=age && age<=59)
 {
-    Console.WriteLine("x is equal to y");
+    Console.WriteLine("kattalar");
 }
 else
 {
-    Console.WriteLine("x and y are not comprable");
+    Console.WriteLine("katta");
 }
-
 
 
 
 // Task-3
 
+Console.Write("First Subject Ball: ");
+int firstSubject=Convert.ToInt32(Console.ReadLine());
+Console.Write("Second Subject Ball: ");
+int secondSubject=Convert.ToInt32(Console.ReadLine());
+Console.Write("Third Subject Ball: ");
+int thirdSubject=Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine(@"Assalomu alaykum! 
-Xush kelibsiz! 
-Men siz kiritgan hafta kunini Ingliz tiliga o'girib beruvchi dasturman.");
-Console.WriteLine(@"Iltimos, hafta kunini namunadagidek to'g'ri holatda kiriting  --> 
-                Dushanba
-                Seshanba
-                Chorshanba 
-                Payshanba
-                Juma
-                Shanba 
-                Yakshanba ");
-string dayName=Console.ReadLine();
-string result=dayName switch 
-{
-    "Dushanba" => "Monday",
-    "Seshanba" => "Tuesday",
-    "Chorshanba" => "Wednesday",
-    "Payshanba" => "Thursday",
-    "Juma" => "Friday",
-    "Shanba" => "Saturday",
-    "Yakshanba" => "Sunday",
-    _ => "Ma'lumot kiritishda xatolik bor! Iltimos qaytadan urinib ko'ring!"
-};
+int middleScore=(firstSubject+secondSubject+thirdSubject)/3;
 
-Console.WriteLine($"    Siz kutgan natija:    " +result);
+string result=
+    80<=middleScore && middleScore<=100
+        ? "A'lo" 
+        : (60<=middleScore && middleScore<=79)
+            ? "Yaxshi"
+            : (40<=middleScore && middleScore<=59)
+                ? "Qoniqarli"
+                : "Qoniqarsiz";
+
+Console.WriteLine($"Sizning o'rtacha o'zlashtiringiz: {result}");
+
+
+
+
+// Task-4
+
+
+Random random=new Random();
+int randomNumber=random.Next(0, 100);
+
+
+Console.Write("Enter num: ");
+int num=Convert.ToInt32(Console.ReadLine());
+
+string result=
+    num==randomNumber
+        ? "Siz kiritgan son randomNumber bilan teng!"
+        : num>100
+            ? "Iltimos, 1 va 100 oralig'ida son kiriting!"
+            : num<randomNumber
+                ? "Siz kiritgan son randomNumber dan kichik"
+                : num>randomNumber
+                    ? "Siz kiritgan son randomNumber dan katta"
+                            : "Protcessing...";
+
+Console.WriteLine($"RandomNumber: {randomNumber}");
+Console.WriteLine($"{result}");
 
 
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
